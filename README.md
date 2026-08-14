@@ -1,4 +1,3 @@
-# WEDE5020POE1
 Website Project Proposal 1: Karabo’s Confectionery
 Karabo Ngobeni ST10522201
 ## ORGANISATION OVERVIEW
