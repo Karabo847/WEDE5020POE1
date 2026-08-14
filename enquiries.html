@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karabo's Confectionery | Enquire</title>
+</head>
+<header>
+    <img src="_images/logo.png" alt="Karabo's Confectionery">
+    <nav>
+        <ul>
+            <li><a href="index.html"> Home</a></li>
+            <li><a href="about.html"> About</a></li>
+            <li><a href="contact.html"> Contact</a></li>
+            <li><a href="services.html"> Services</a></li>
+            <li><a href="enquiries.html"> Enquiries</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+    <h2>Order enquiry</h2>
+        <p>
+            Fill in the form below to request a quote for your order. We aim
+            to reply within 2 business days. Note: this form is not yet
+            functional &mdash; JavaScript form handling will be added in a
+            later part of this project.
+        </p>
+
+        <!-- Enquiry / order request form -->
+        <form id="enquiry-form" action="#" method="post">
+
+            <label for="full-name">Full name</label>
+            <input type="text" id="full-name" name="full-name" required>
+
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="event-date">Event date</label>
+            <input type="date" id="event-date" name="event-date">
+
+            <label for="product-type">What are you enquiring about?</label>
+            <select id="product-type" name="product-type">
+                <option value="cakes">Cakes</option>
+                <option value="cupcakes">Cupcakes</option>
+                <option value="muffins">Muffins</option>
+                <option value="biscuits">Biscuits</option>
+                <option value="scones">Scones</option>
+                <option value="other">Other (snowballs, buns, rusks, cinnamon rolls)</option>
+            </select>
+
+            <label for="guest-count">Approximate number of guests</label>
+            <input type="number" id="guest-count" name="guest-count" min="1">
+
+            <label for="message">Tell us about your order</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+             <button type="submit">Submit enquiry</button>
+
+        </form>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Karabo's Confectionery. All rights reserved.</p>
+        <p><a href="contact.html">Contact us</a></p>
+
+</footer>
+
+<body>
+    
+</body>
+</html>
