@@ -25,6 +25,31 @@ Home page, Enquiries page, Contact page, Services page, About page
 ## CHANGELOG
 Sitemap was added
 Home page, Enquiries page, Contact page, Services page, About page were added as well
+### Part 2
+#### Fixed
+- Corrected broken image file names in `_images` (several had duplicate
+  file extensions, e.g. `logo.png.png`, and did not match the file names
+  used in the HTML `src` attributes).
+- Fixed all `<img>` src paths across index.html, services.html, about.html,
+  contact.html, and enquiries.html to match the corrected file names.
+
+#### Added
+- Created external stylesheet `css_assets/myfirststyles.css` and linked it
+  to all five pages.
+- Added a CSS reset and site-wide base styles for font, colour, and spacing.
+- Added CSS custom properties for the brand colour palette and fonts.
+- Added a typographic scale for headings and body text.
+- Added a Flexbox header and navigation bar with an active-page indicator.
+- Added CSS Grid layouts for the hero section, service cards, and
+  location cards.
+- Added :hover, :focus and :active styles for links, buttons, cards, and
+  form fields.
+- Styled the enquiry and contact forms with consistent inputs and
+  focus states.
+- Added media queries at 768px (tablet) and 480px (mobile) so the layout,
+  typography, and navigation menu adapt to smaller screens.
+- Added responsive image sizing (`srcset`/`sizes`) to the hero image.
+- Added desktop, tablet, and mobile screenshots to this README.
 ## REFERENCES
 ZA Registry Consortium (ZARC) (2026) ZA Registry Consortium. Available at: https://zarc.web.za/ (Accessed: 14 August 2026).
 Web Hosters (2026) Web hosting and domain registration. Available at: Web Hosters (Accessed: 14 August 2026).
@@ -32,4 +57,16 @@ Dalkom (2026) Web hosting South Africa. Available at: Dalkom Web Hosting (Access
 W3C (2026) HTML: HyperText Markup Language. Available at: W3C HTML (Accessed: 14 August 2026).
 MDN Web Docs (2026) CSS: Cascading Style Sheets. Available at: MDN CSS (Accessed: 14 August 2026).
 MDN Web Docs (2026) JavaScript. Available at: MDN JavaScript (Accessed: 14 August 2026).
+
+### Responsive images
+The hero image on the homepage uses `srcset` and `sizes` to serve a smaller
+image (`hero-cake-small.jpg`, resized with Squoosh) to screens 768px wide
+or narrower, reducing load time on mobile devices.
+
+### Screenshots
+<img width="206" height="293" alt="Screenshot 2026-09-18 212135" src="https://github.com/user-attachments/assets/019f42cb-c24f-4c1e-86d4-ac9780f2c2ac" /> desktop
+<img width="206" height="302" alt="Screenshot 2026-09-18 212217" src="https://github.com/user-attachments/assets/b45d5918-61dc-468c-b51e-1f9be76dbed5" /> tablet
+<img width="175" height="299" alt="Screenshot 2026-09-18 212801" src="https://github.com/user-attachments/assets/2580dcae-47de-45de-a282-121454ca6590" /> mobile
+
+
 
