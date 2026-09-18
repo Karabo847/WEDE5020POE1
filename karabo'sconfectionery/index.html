@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karabo's Confectionery | Home</title>
 </head>
-<header>
-    <img src="_images/logo.png" alt="Karabo's Confectionery">
-    <nav>
-        <ul>
-            <li><a href="index.html"> Home</a></li>
-            <li><a href="about.html"> About</a></li>
-            <li><a href="contact.html"> Contact</a></li>
-            <li><a href="services.html"> Services</a></li>
-            <li><a href="enquiries.html"> Enquiries</a></li>
-        </ul>
-    </nav>
 
-</header>
+<body>
+    <header>
+        <a href="index.html" class="logo"></a>
+            <img src="_images/logo.png" alt="Karabo's Confectionery">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active"> Home</a></li>
+                <li><a href="about.html"> About</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+                <li><a href="services.html"> Services</a></li>
+                <li><a href="enquiries.html"> Enquiries</a></li>
+            </ul>
+        </nav>
+
+    </header>
 <!-- ===== Main Content ===== -->
 
 <main>
     <section id="hero">
-            <img src="images/hero-cakes.png" alt="Cupcakes and a celebration cake from Karabo's Confectionery">
-            <h2>Handcrafted treats for every occasion</h2>
+        <div class="hero-text">
+            <h1>Handcrafted treats for every occasion</h1>
             <p>
                 Karabo's Confectionery bakes custom cakes, cupcakes, muffins,
                 biscuits, scones, and more &ndash; from everyday treats to
@@ -31,11 +34,20 @@
                 attention to detail.
             </p>
             <a href="enquiry.html" class="cta-button">Request an order</a>
+        </div>
+
+        <!-- Responsive hero image: the browser picks the size that fits the screen -->
+        <picture>
+            <source media="(max-width: 600px)" srcset="_images/hero-cakes-small.png">
+            <source media="(max-width: 1200px)" srcset="_images/hero-cakes-medium.png">
+            <img src="_images/hero-cake.png" alt="Freshly baked treats from Karabo's Confectionery" class="responsive-image">
+        </picture>
         </section>
 
+        <!-- Highlights: a quick summary of what the bakery offers -->
          <section id="highlights">
             <h2>What we offer</h2>
-            <ul>
+            <ul class="class-grid">
                 <li>Custom cakes</li>
                 <li>Cupcakes</li>
                 <li>Muffins</li>
@@ -44,20 +56,19 @@
                 <li>Snowballs, buns, rusks &amp; cinnamon rolls</li>
             </ul>
             <p>
-                Visit our <a href="products.html">Products page</a> to see the
+                Visit our <a href="services.html">Services page</a> to see the
                 full range, or read more <a href="about.html">About Us</a>.
             </p>
         </section>
 
 </main>
 
+<!-- ===== Site footer ===== -->
 <footer>
     <p>&copy; 2026 Karabo's Confectionery. All rights reserved.</p>
         <p><a href="contact.html">Contact us</a></p>
 
 </footer>
-
-<body>
     
 </body>
 </html>
