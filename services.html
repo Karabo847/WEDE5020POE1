@@ -3,117 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karabo's Confectionery | Services</title>
+    <title>Our Services &amp; Prices | Karabo's Confectionery</title>
+    <meta name="description" content="Browse cakes, 
+    cupcakes, muffins, biscuits and scones with starting prices. 
+    Every order can be customised in flavour, size and design.">
+    <meta name="keywords" content="bakery prices, 
+    custom cakes, 
+    cupcakes, 
+    muffins, 
+    biscuits, 
+    scones, 
+    Polokwane bakery menu">
+    <meta name="author" content="Karabo's Confectionery">
+    <link rel="stylesheet" href="css_assets/myfirststyles.css">
 </head>
-<header>
-    <img src="_images/logo.png" alt="Karabo's Confectionery">
+
+<body>
+
+    <!-- ===== Site header and main navigation ===== -->
+    <header>
+        <a href="index.html" class="logo"></a>
+            <img src="_images/karabos-confectionery-logo.png" alt="Karabo's Confectionery">
     <nav>
         <ul>
             <li><a href="index.html"> Home</a></li>
             <li><a href="about.html"> About</a></li>
             <li><a href="contact.html"> Contact</a></li>
-            <li><a href="services.html"> Services</a></li>
+            <li><a href="services.html" class="active"> Services</a></li>
             <li><a href="enquiries.html"> Enquiries</a></li>
         </ul>
     </nav>
 
-</header>
+    </header>
 
 <main>
-    <h2>Our services</h2>
+    <h1>Our services</h1>
         <p>
             Every item below can be customised in flavour, size, and design.
             Prices are a starting guide &mdash; final pricing depends on size,
             complexity, and design details.
         </p>
 
-        <!-- Muffins -->
-        <section id="muffins">
-            <h3>Muffins</h3>
-            <img src="images/hero-cakes.png" alt="Freshly baked treats from Karabo's Confectionery">
-            <p>Flavours: chocolate, vanilla, caramel choc chips, blueberry, bran, pineapple, and more.</p>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-                <li>20L &ndash; R700</li>
-            </ul>
-        </section>
+        <!-- Search, filter and sort controls (handled by js_assets/services.js) -->
+        <div class="filter-bar" role="search">
+            <div class="filter-field">
+                <label for="product-search">Search</label>
+                <input type="search" id="product-search" placeholder="e.g. muffins, ginger, cake" autocomplete="off">
+            </div>
+            <div class="filter-field">
+                <label for="category-filter">Category</label>
+                <select id="category-filter">
+                    <option value="all">All treats</option>
+                </select>
+            </div>
+            <div class="filter-field">
+                <label for="sort-order">Sort by</label>
+                <select id="sort-order">
+                    <option value="default">Our order</option>
+                    <option value="name">Name (A&ndash;Z)</option>
+                    <option value="price-low">Price (low to high)</option>
+                    <option value="price-high">Price (high to low)</option>
+                </select>
+            </div>
+        </div>
 
-        <!-- Biscuits -->
-        <section id="biscuits">
-            <h3>Biscuits</h3>
-            <img src="images/pastries-tray.jpg" alt="Tray of freshly baked biscuits">
-            <p>Available in Romany creams, ginger, peanut butter cornflakes, plain, and mixed varieties.</p>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
 
-            <h4>Romany creams</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-                <li>20L &ndash; R850</li>
-            </ul>
+        <!-- Product cards are built here by JavaScript -->
+        <div id="product-list" class="service-grid"></div>
 
-            <h4>Ginger biscuits</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-                <li>20L &ndash; R700</li>
-            </ul>
-
-            <h4>Peanut butter cornflakes</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-            </ul>
-
-            <h4>Plain biscuits</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R500</li>
-                <li>20L &ndash; R700</li>
-            </ul>
-
-            <h4>Mixed biscuits</h4>
-            <ul>
-                <li>5L &ndash; R400</li>
-                <li>10L &ndash; R600</li>
-                <li>20L &ndash; R800</li>
-            </ul>
-        </section>
-
-         <!-- Scones -->
-        <section id="scones">
-            <h3>Scones</h3>
-            <img src="images/scones.jpg" alt="A plate of freshly baked scones">
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R450</li>
-                <li>20L &ndash; R580</li>
-            </ul>
-        </section>
-
-        <!-- Cupcakes -->
-        <section id="cupcakes">
-            <h3>Cupcakes</h3>
-            <img src="images/hero-cakes.jpg" alt="Box of decorated cupcakes">
-            <ul>
-                <li>6 cupcakes &ndash; R120</li>
-                <li>12 cupcakes &ndash; R240</li>
-            </ul>
-        </section>
-
-         <!-- Cakes -->
-        <section id="cakes">
-            <h3>Cakes</h3>
-            <img src="images/cake-ayana.jpg" alt="Custom celebration cake with gold detailing">
-            <img src="images/cake-spiderman.jpg" alt="Custom Spider-Man themed birthday cake">
-            <p>Prices start from R550, depending on size, flavour, and design.</p>
-        </section>
-
-        <!-- Also available -->
-        <section id="also-available">
-            <h3>Also available</h3>
-            <p>Snowballs, buns, rusks, and cinnamon rolls are now available &ndash; enquire for pricing.</p>
-        </section>
+        <noscript>
+            <p>Please turn on JavaScript to see our products, or <a href="contact.html">contact us</a> for our full price list.</p>
+        </noscript>
 
 </main>
 
@@ -123,7 +84,7 @@
 
 </footer>
 
-<body>
-    
+<script src="js_assets/services.js" defer></script>
+<script src="js_assets/main.js" defer></script>
 </body>
 </html>
