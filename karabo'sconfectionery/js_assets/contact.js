@@ -25,7 +25,6 @@
     ];
 
     /* ---------- 1. Interactive map ---------- */
-    // Setup follows the Leaflet quick-start guide (Agafonkin, 2023)
     function initMap()
     {
         const canvas = document.getElementById('map-canvas');
