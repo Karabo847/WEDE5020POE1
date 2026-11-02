@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karabo's Confectionery | Home</title>
+    <title>Karabo's Confectionery | Custom Cakes &amp; Fresh Bakes in Polokwane</title>
+    <meta name="description" content="Karabo's Confectionery bakes custom cakes,
+     cupcakes, 
+     muffins, 
+     biscuits 
+     and scones in Polokwane. 
+     Fresh, handmade treats for every occasion.">
+    <meta name="keywords" content="bakery Polokwane, 
+    custom cakes, 
+    cupcakes, 
+    muffins, 
+    biscuits, 
+    scones, 
+    birthday cakes, 
+    homemade baking">
+    <meta name="author" content="Karabo's Confectionery">
+    <link rel="stylesheet" href="css_assets/myfirststyles.css">
+
+    <!-- Local SEO: structured data that tells search engines this is a bakery in Polokwane (Schema.org, 2026) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Karabo's Confectionery",
+        "telephone": "+27695168683",
+        "email": "hello@karaboconfectionery.co.za",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "35 Rome Ave, Mahlasedi Park Phase 1",
+            "addressLocality": "Polokwane",
+            "addressRegion": "Limpopo",
+            "addressCountry": "ZA"
+        }
+    }
+    </script>
 </head>
 
 <body>
+    <!-- ===== Site header and main navigation ===== -->
     <header>
-        <a href="index.html" class="logo"></a>
-            <img src="_images/logo.png" alt="Karabo's Confectionery">
+       <a href="index.html" class="logo"><img src="_images/karabos-confectionery-logo.png" alt="Karabo's Confectionery"></a>
         <nav>
             <ul>
                 <li><a href="index.html" class="active"> Home</a></li>
@@ -21,10 +55,12 @@
         </nav>
 
     </header>
-<!-- ===== Main Content ===== -->
 
+    <!-- ===== Main Content ===== -->
 <main>
-    <section id="hero">
+
+    <!-- Hero: introduction and call to action -->
+     <section id="hero" class="reveal">
         <div class="hero-text">
             <h1>Handcrafted treats for every occasion</h1>
             <p>
@@ -33,19 +69,19 @@
                 celebration orders. Every order is made fresh, by hand, with
                 attention to detail.
             </p>
-            <a href="enquiry.html" class="cta-button">Request an order</a>
+            <a href="enquiries.html" class="cta-button">Request an order</a>
         </div>
 
-        <!-- Responsive hero image: the browser picks the size that fits the screen -->
+        <!-- Responsive hero image -->
         <picture>
-            <img src="_images/hero-cake.png" alt="Freshly baked treats from Karabo's Confectionery" class="responsive-image">
+            <img src="_images/custom-celebration-cake.png" alt="Custom celebration cake and fresh bakes from Karabo's Confectionery in Polokwane" class="responsive-image">
         </picture>
         </section>
 
         <!-- Highlights: a quick summary of what the bakery offers -->
-         <section id="highlights">
+         <section id="highlights" class="reveal">
             <h2>What we offer</h2>
-            <ul class="class-grid">
+            <ul class="card-grid">
                 <li>Custom cakes</li>
                 <li>Cupcakes</li>
                 <li>Muffins</li>
@@ -59,6 +95,54 @@
             </p>
         </section>
 
+        <!-- Gallery -->
+        <section id="gallery" class="reveal">
+            <h2>Gallery</h2>
+            <p>Click a photo to see it larger.</p>
+            <ul class="gallery-grid">
+                <li>
+                    <a href="_images/spiderman-birthday-cake.png" class="gallery-item" data-caption="Custom Spider-Man themed birthday cake">
+                        <img src="_images/spiderman-birthday-cake.png" alt="Custom Spider-Man themed birthday cake" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="_images/batman-birthday-cake.png" class="gallery-item" data-caption="Custom Batman themed birthday cake">
+                        <img src="_images/batman-birthday-cake.png" alt="Custom Batman themed birthday cake" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="_images/decorated-cupcakes.jpg" class="gallery-item" data-caption="Decorated cupcakes for birthdays and events">
+                        <img src="_images/decorated-cupcakes.jpg" alt="Box of decorated cupcakes" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="_images/fresh-scones.jpeg" class="gallery-item" data-caption="Freshly baked scones">
+                        <img src="_images/fresh-scones.jpeg" alt="Plate of freshly baked scones" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="_images/cinnamon-rolls.jpg" class="gallery-item" data-caption="Warm cinnamon rolls">
+                        <img src="_images/cinnamon-rolls.jpg" alt="Tray of warm cinnamon rolls" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="_images/coconut-snowballs.jpeg" class="gallery-item" data-caption="Coconut snowballs">
+                        <img src="_images/coconut-snowballs.jpeg" alt="Coconut snowballs" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="_images/freshly-baked-buns.jpg" class="gallery-item" data-caption="Freshly baked buns">
+                        <img src="_images/freshly-baked-buns.jpg" alt="Freshly baked buns" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="_images/bread-rolls.jpg" class="gallery-item" data-caption="Fresh bread rolls">
+                        <img src="_images/bread-rolls.jpg" alt="Fresh bread rolls" loading="lazy">
+                    </a>
+                </li>
+            </ul>
+        </section>
+
 </main>
 
 <!-- ===== Site footer ===== -->
@@ -67,6 +151,8 @@
         <p><a href="contact.html">Contact us</a></p>
 
 </footer>
+
+ <script src="js_assets/main.js" defer></script>
     
 </body>
 </html>

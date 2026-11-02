@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Karabo's Confectionery Polokwane</title>
+    <meta name="description" content="Get in touch with Karabo's Confectionery. 
+    Find our Polokwane locations, phone number and email, or send us a message.">
+    <meta name="keywords" content="contact bakery, Karabo's Confectionery contact, 
+    Polokwane bakery location, cake orders">
+    <meta name="author" content="Karabo's Confectionery">
     <link rel="stylesheet" href="css_assets/myfirststyles.css">
-    <title>Karabo's Confectionery | Contact Us</title>
+    
 </head>
 
 <body>
+    <header>
+        <a href="index.html" class="logo"><img src="_images/karabos-confectionery-logo.png" alt="Karabo's Confectionery logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiries.html">Enquiries</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <img src="_images/logo.png" alt="Karabo's Confectionery">
-    <nav>
-        <ul>
-            <li><a href="index.html"> Home</a></li>
-            <li><a href="about.html"> About</a></li>
-            <li><a href="contact.html"> Contact</a></li>
-            <li><a href="services.html"> Services</a></li>
-            <li><a href="enquiries.html"> Enquiries</a></li>
-        </ul>
-    </nav>
-
-</header>
-
-<main>
-     <h2>Contact us</h2>
+    <main>
+        <h1>Contact us</h1>
 
         <!-- Contact details -->
         <section id="contact-details">
@@ -32,53 +36,103 @@
             <p>Phone: <a href="tel:+27695168683">069 516 8683</a></p>
         </section>
 
-        <!-- Pickup / studio locations -->
+        <!-- Studio and pickup locations -->
         <section id="locations">
-            <h3>Our locations</h3>
+            <h2>Our locations</h2>
 
             <article>
-                <h4>Main studio &ndash;Polokwane</h4>
+                <h3>Main studio &ndash; Polokwane</h3>
                 <p>35 Rome Ave, Mahlasedi Park Phase 1, Polokwane</p>
             </article>
 
             <article>
-                <h4>Pickup point &ndash; Polokwane</h4>
-                <p>35 Rome Ave, Mahlasedi Park Phase 1, Polokwane</p>
+                <h3>Pickup point &ndash; Limpopo Mall, Polokwane</h3>
+                <p>Collect your order at Limpopo Mall. We confirm the exact meeting spot when your order is booked.</p>
             </article>
         </section>
 
-        <!-- Map placeholder: to be replaced with an embedded map -->
+        <!-- Embedded Google Maps (external service): one box per location -->
         <section id="map">
-            <h3>Find us</h3>
-            <!-- Add an embedded map or map screenshot here, e.g. images/map-placeholder.png -->
+            <h2>Find us</h2>
+            <div class="map-pair">
+                <div>
+                    <h3>Main studio</h3>
+                    <p>35 Rome Ave, Mahlasedi Park Phase 1, Polokwane</p>
+                    <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!4v1793475427294!6m8!1m7!1svKxj2Ov5kPkOCi7PEC5avw!2m2!1d-23.87200643384733!2d29.43124166642926!3f357.18057297150716!4f-6.887445037561221!5f0.7820865974627469" title="Google Maps view of our main studio in Mahlasedi Park, Polokwane" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div>
+                    <h3>Pickup point</h3>
+                    <p>Limpopo Mall, Polokwane</p>
+                    <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.587790794977!2d29.446897274778408!3d-23.90423147427713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d98fd074d72f%3A0x30c077d92a687174!2sLimpopo%20Mall!5e0!3m2!1sen!2sza!4v1793476109874!5m2!1sen!2sza" title="Google Maps view of our pickup point at Limpopo Mall, Polokwane" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
         </section>
 
-        <!-- General contact form -->
+        <!-- General contact form: validated by js_assets/contact.js -->
         <section id="contact-form">
-            <h3>Send us a message</h3>
-            <form action="#" method="post">
+            <h2>Send us a message</h2>
+            <form id="message-form" action="#" method="post" novalidate>
 
                 <label for="contact-name">Full name</label>
-                <input type="text" id="contact-name" name="contact-name" required>
+                <input type="text" id="contact-name" name="contact-name" autocomplete="name" maxlength="60" aria-describedby="contact-name-error" required>
+                <span class="error-message" id="contact-name-error" role="alert"></span>
 
                 <label for="contact-email">Email address</label>
-                <input type="email" id="contact-email" name="contact-email" required>
+                <input type="email" id="contact-email" name="contact-email" autocomplete="email" aria-describedby="contact-email-error" required>
+                <span class="error-message" id="contact-email-error" role="alert"></span>
+
+                <label for="contact-phone">Phone number (optional)</label>
+                <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" placeholder="e.g. 069 516 8683" aria-describedby="contact-phone-error">
+                <span class="error-message" id="contact-phone-error" role="alert"></span>
+
+                <label for="message-type">Type of message</label>
+                <select id="message-type" name="message-type" aria-describedby="message-type-error" required>
+                    <option value="">Select a message type&hellip;</option>
+                    <option value="General question">General question</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Compliment">Compliment</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span class="error-message" id="message-type-error" role="alert"></span>
 
                 <label for="contact-message">Message</label>
-                <textarea id="contact-message" name="contact-message" rows="5" required></textarea>
+                <textarea id="contact-message" name="contact-message" rows="5" maxlength="1000" aria-describedby="contact-message-hint contact-message-error" required></textarea>
+                <span class="hint" id="contact-message-hint">0 / 1000 characters</span>
+                <span class="error-message" id="contact-message-error" role="alert"></span>
 
-                <button type="submit">Send message</button>
-
+                <button type="submit">Prepare my email</button>
             </form>
+
+            <!-- Email preview shown after the form passes validation -->
+            <div id="email-preview" class="form-response" hidden>
+                <h3 id="preview-heading" tabindex="-1">Your email is ready</h3>
+                <p>Check the details below, then press <strong>Send email</strong> to open it in your email app.</p>
+                <dl>
+                    <dt>To</dt><dd id="preview-to"></dd>
+                    <dt>Subject</dt><dd id="preview-subject"></dd>
+                </dl>
+                <pre id="preview-body"></pre>
+                <div class="response-actions">
+                    <a id="send-email-link" class="cta-button" href="#">Send email</a>
+                     <button type="button" id="edit-message" class="secondary-button">Edit message</button>
+                </div>
+            </div>
         </section>
 
+        <!-- Embedded Google Form (external service) -->
+        <section id="google-form">
+            <h2>Share your feedback</h2>
+            <iframe class="embedded-form" src="https://docs.google.com/forms/d/e/1FAIpQLSdaYDxj1w3-q5OVWdtfRcOFxB31cweZh7PNPy57rtiZsXgwiw/viewform?embedded=true" title="Karabo's Confectionery contact form (Google Form)" loading="lazy">Loading form&hellip;</iframe>
+        </section>
     </main>
 
-<footer>
-    <p>&copy; 2026 Karabo's Confectionery. All rights reserved.</p>
+    <footer>
+        <p>&copy; 2026 Karabo's Confectionery. All rights reserved.</p>
         <p><a href="contact.html">Contact us</a></p>
-</footer>
+    </footer>
 
-    
+    <script src="js_assets/main.js" defer></script>
+    <script src="js_assets/contact.js" defer></script>
 </body>
 </html>

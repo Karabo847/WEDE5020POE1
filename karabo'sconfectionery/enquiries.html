@@ -3,50 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Enquiry | Karabo's Confectionery</title>
+    <meta name="description" content="Request a quote for a custom cake, cupcakes or baked goods from Karabo's Confectionery. Fill in the enquiry form and get an estimate.">
+    <meta name="keywords" content="cake enquiry, order cakes Polokwane, bakery quote, custom cake order, cupcake order">
+    <meta name="author" content="Karabo's Confectionery">
     <link rel="stylesheet" href="css_assets/myfirststyles.css">
-    <title>Karabo's Confectionery | Enquire</title>
 </head>
 
 <body>
+    <header>
+        <a href="index.html" class="logo"><img src="_images/karabos-confectionery-logo.png" alt="Karabo's Confectionery logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiries.html" class="active">Enquiries</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <img src="_images/logo.png" alt="Karabo's Confectionery">
-    <nav>
-        <ul>
-            <li><a href="index.html"> Home</a></li>
-            <li><a href="about.html"> About</a></li>
-            <li><a href="contact.html"> Contact</a></li>
-            <li><a href="services.html"> Services</a></li>
-            <li><a href="enquiries.html" class="active"> Enquiries</a></li>
-        </ul>
-    </nav>
-
-</header>
-
-<main>
-    <h2>Order enquiry</h2>
+    <main>
+        <h1>Order enquiry</h1>
         <p>
-            Fill in the form below to request a quote for your order. We aim
-            to reply within 2 business days.
+            Tell us what you would like and we will show you an estimated cost
+            and whether your date is available. We aim to reply within
+            2 business days.
         </p>
 
-        <!-- Enquiry / order request form -->
-        <form id="enquiry-form" action="#" method="post">
+        <!-- Enquiry form: validated and processed by js_assets/enquiry.js -->
+        <form id="enquiry-form" action="#" method="post" novalidate>
 
             <label for="full-name">Full name</label>
-            <input type="text" id="full-name" name="full-name" required>
+            <input type="text" id="full-name" name="full-name" autocomplete="name" maxlength="60" aria-describedby="full-name-error" required>
+            <span class="error-message" id="full-name-error" role="alert"></span>
 
             <label for="email">Email address</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+            <span class="error-message" id="email-error" role="alert"></span>
 
             <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone">
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 069 516 8683" aria-describedby="phone-error" required>
+            <span class="error-message" id="phone-error" role="alert"></span>
 
             <label for="event-date">Event date</label>
-            <input type="date" id="event-date" name="event-date">
+            <input type="date" id="event-date" name="event-date" aria-describedby="event-date-error" required>
+            <span class="error-message" id="event-date-error" role="alert"></span>
 
             <label for="product-type">What are you enquiring about?</label>
-            <select id="product-type" name="product-type">
+            <select id="product-type" name="product-type" aria-describedby="product-type-error" required>
+                <option value="">Select a product&hellip;</option>
                 <option value="cakes">Cakes</option>
                 <option value="cupcakes">Cupcakes</option>
                 <option value="muffins">Muffins</option>
@@ -54,24 +61,64 @@
                 <option value="scones">Scones</option>
                 <option value="other">Other (snowballs, buns, rusks, cinnamon rolls)</option>
             </select>
+            <span class="error-message" id="product-type-error" role="alert"></span>
 
-            <label for="guest-count">Approximate number of guests</label>
-            <input type="number" id="guest-count" name="guest-count" min="1">
+            <!-- Shown by JavaScript once a priced product is chosen -->
+            <div id="option-fields" class="field-group" hidden>
+                <label for="product-option">Size or option</label>
+                <select id="product-option" name="product-option" aria-describedby="product-option-error"></select>
+                <span class="error-message" id="product-option-error" role="alert"></span>
+
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="50" value="1" aria-describedby="quantity-error">
+                <span class="error-message" id="quantity-error" role="alert"></span>
+            </div>
+
+            <label for="guest-count">Approximate number of guests (optional)</label>
+            <input type="number" id="guest-count" name="guest-count" min="1" max="500" aria-describedby="guest-count-error">
+            <span class="error-message" id="guest-count-error" role="alert"></span>
 
             <label for="message">Tell us about your order</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" maxlength="500" aria-describedby="message-hint message-error" required></textarea>
+            <span class="hint" id="message-hint">0 / 500 characters</span>
+            <span class="error-message" id="message-error" role="alert"></span>
 
-             <button type="submit">Submit enquiry</button>
-
+            <button type="submit">Get my estimate</button>
         </form>
 
-</main>
+        <!-- Response shown after the form passes validation -->
+        <div id="enquiry-response" class="form-response" hidden>
+            <h2 id="response-heading" tabindex="-1"></h2>
+            <dl>
+                <dt>Item</dt><dd id="res-item"></dd>
+                <dt>Quantity</dt><dd id="res-quantity"></dd>
+                <dt>Estimated cost</dt><dd id="res-cost"></dd>
+                <dt>Event date</dt><dd id="res-date"></dd>
+                <dt>Availability</dt><dd id="res-availability"></dd>
+                <dt>We will reply to</dt><dd id="res-email"></dd>
+            </dl>
+            <p id="res-note"></p>
+            <div class="response-actions">
+                <button type="button" id="new-enquiry" class="secondary-button">Make another enquiry</button>
+                <a href="contact.html" class="cta-button">Contact us</a>
+            </div>
+        </div>
 
-<footer>
-    <p>&copy; 2026 Karabo's Confectionery. All rights reserved.</p>
+        <!-- Embedded Google Form (external service) -->
+        <section id="google-form">
+            <h2>Prefer Google Forms?</h2>
+            <p>You can also send your enquiry using our Google Form below.</p>
+            <iframe class="embedded-form" src="https://docs.google.com/forms/d/e/1FAIpQLScZqRciMcKOtrMT4QIBdlg-cNKx2Us0c8WynDySTdmvrJM2Dg/viewform?embedded=true" title="Karabo's Confectionery enquiry form (Google Form)" loading="lazy">Loading form&hellip;</iframe>
+        </section>
+    </main>
+        
+
+    <footer>
+        <p>&copy; 2026 Karabo's Confectionery. All rights reserved.</p>
         <p><a href="contact.html">Contact us</a></p>
+    </footer>
 
-</footer>
-    
+    <script src="js_assets/main.js" defer></script>
+    <script src="js_assets/enquiry.js" defer></script>
 </body>
 </html>

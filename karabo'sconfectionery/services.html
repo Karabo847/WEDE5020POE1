@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services &amp; Prices | Karabo's Confectionery</title>
+    <meta name="description" content="Browse cakes, 
+    cupcakes, muffins, biscuits and scones with starting prices. 
+    Every order can be customised in flavour, size and design.">
+    <meta name="keywords" content="bakery prices, 
+    custom cakes, 
+    cupcakes, 
+    muffins, 
+    biscuits, 
+    scones, 
+    Polokwane bakery menu">
+    <meta name="author" content="Karabo's Confectionery">
     <link rel="stylesheet" href="css_assets/myfirststyles.css">
-    <title>Karabo's Confectionery | Services</title>
 </head>
 
 <body>
 
-
     <!-- ===== Site header and main navigation ===== -->
     <header>
         <a href="index.html" class="logo"></a>
-            <img src="_images/logo.png" alt="Karabo's Confectionery">
+            <img src="_images/karabos-confectionery-logo.png" alt="Karabo's Confectionery">
     <nav>
         <ul>
             <li><a href="index.html"> Home</a></li>
@@ -34,98 +44,37 @@
             complexity, and design details.
         </p>
 
-        <div class="service-grid">
-
-
-        <!-- Muffins -->
-        <section id="muffins" class="service-card">
-            <h3>Muffins</h3>
-            <img src="_images/muffins.jpg" alt="Freshly baked bran muffins" class="responsive-image">
-            <p>Flavours: chocolate, vanilla, caramel choc chips, blueberry, bran, pineapple, and more.</p>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-                <li>20L &ndash; R700</li>
-            </ul>
-        </section>
-
-        <!-- Biscuits -->
-        <section id="biscuits" class="service-card">
-            <h3>Biscuits</h3>
-            <img src="_images/biscuits.jpg" alt="Tray of freshly baked biscuits" class="responsive-image">
-            <p>Available in Romany creams, ginger, peanut butter cornflakes, plain, and mixed varieties.</p>
-
-            <h4>Romany creams</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-                <li>20L &ndash; R850</li>
-            </ul>
-
-            <h4>Ginger biscuits</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-                <li>20L &ndash; R700</li>
-            </ul>
-
-            <h4>Peanut butter cornflakes</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R550</li>
-            </ul>
-
-            <h4>Plain biscuits</h4>
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R500</li>
-                <li>20L &ndash; R700</li>
-            </ul>
-
-            <h4>Mixed biscuits</h4>
-            <ul>
-                <li>5L &ndash; R400</li>
-                <li>10L &ndash; R600</li>
-                <li>20L &ndash; R800</li>
-            </ul>
-        </section>
-
-         <!-- Scones -->
-        <section id="scones" class="service-card">
-            <h3>Scones</h3>
-            <img src="_images/Scones.jpeg" alt="A plate of freshly baked scones" class= "responsive-image">
-            <ul>
-                <li>5L &ndash; R300</li>
-                <li>10L &ndash; R450</li>
-                <li>20L &ndash; R580</li>
-            </ul>
-        </section>
-
-        <!-- Cupcakes -->
-        <section id="cupcakes" class="service-card">
-            <h3>Cupcakes</h3>
-            <img src="_images/cupcakes.jpg" alt="Box of decorated cupcakes" class="responsive-image">
-            <ul>
-                <li>6 cupcakes &ndash; R120</li>
-                <li>12 cupcakes &ndash; R240</li>
-            </ul>
-        </section>
-
-         <!-- Cakes -->
-        <section id="cakes" class="service-card">
-            <h3>Cakes</h3>
-            <img src="_images/cake-batman.png" alt="Custom batman-themed birthday cake " class="responsive-image">
-            <img src="_images/cake-spiderman.png" alt="Custom Spider-Man themed birthday cake" class="responsive-image">
-            <p>Prices start from R550, depending on size, flavour, and design.</p>
-        </section>
-
-        <!-- Also available -->
-        <section id="also-available" class="service-card">
-            <h3>Also available</h3>
-            <p>Snowballs, buns, rusks, and cinnamon rolls are now available &ndash; enquire for pricing.</p>
-        </section>
-
+        <!-- Search, filter and sort controls (handled by js_assets/services.js) -->
+        <div class="filter-bar" role="search">
+            <div class="filter-field">
+                <label for="product-search">Search</label>
+                <input type="search" id="product-search" placeholder="e.g. muffins, ginger, cake" autocomplete="off">
+            </div>
+            <div class="filter-field">
+                <label for="category-filter">Category</label>
+                <select id="category-filter">
+                    <option value="all">All treats</option>
+                </select>
+            </div>
+            <div class="filter-field">
+                <label for="sort-order">Sort by</label>
+                <select id="sort-order">
+                    <option value="default">Our order</option>
+                    <option value="name">Name (A&ndash;Z)</option>
+                    <option value="price-low">Price (low to high)</option>
+                    <option value="price-high">Price (high to low)</option>
+                </select>
+            </div>
         </div>
+
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+
+        <!-- Product cards are built here by JavaScript -->
+        <div id="product-list" class="service-grid"></div>
+
+        <noscript>
+            <p>Please turn on JavaScript to see our products, or <a href="contact.html">contact us</a> for our full price list.</p>
+        </noscript>
 
 </main>
 
@@ -134,6 +83,8 @@
         <p><a href="contact.html">Contact us</a></p>
 
 </footer>
-    
+
+<script src="js_assets/services.js" defer></script>
+<script src="js_assets/main.js" defer></script>
 </body>
 </html>

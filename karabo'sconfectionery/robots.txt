@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://karabo847.github.io/WEDE5020POE1/sitemap.xml
